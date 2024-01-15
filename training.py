@@ -17,8 +17,6 @@ from utils import (
     pixel_counts
 )
 import warnings
-import heapq
-
 warnings.filterwarnings("ignore")
 torch.manual_seed(-1)
 
@@ -76,13 +74,13 @@ MASK_DICT = {
 # Training and Evaluation options
 PIN_MEMORY = True
 LOAD_MODEL = True
-TRAIN_MODEL = True
+TRAIN_MODEL = False
 FINE_TUNE = True
 
 # Saving options
-SAVE_MODEL = True
+SAVE_MODEL = False
 SAVE_PREDICTIONS = True
-SAVE_METRICS = True
+SAVE_METRICS = False
 
 TRAIN_IMG_DIR = "Aquatic Data Splits/train/images/"
 TRAIN_MASK_DIR = "Aquatic Data Splits/train/masks/"
@@ -219,7 +217,7 @@ def main():
     if SAVE_PREDICTIONS:
         save_predictions_as_imgs(val_loader, UNET_model,
                                  SAVED_IMG_DIR, MASK_DICT,
-                                 sample_size=3)
+                                 sample_size=5)
 
     if SAVE_METRICS:
         save_evaluation_metrics(val_loader, UNET_model,
