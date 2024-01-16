@@ -52,9 +52,9 @@ Benchmark_Evaluation/ contains the corresponding test-set results
 """
 
 # Hyperparameters
-LEARNING_RATE = 1.00e-4
+LEARNING_RATE = 1.50e-4
 DEVICE = "cuda"
-NUM_EPOCHS = 6
+NUM_EPOCHS = 4
 NUM_WORKERS = 5
 IMAGE_HEIGHT = 256
 IMAGE_WIDTH = 256
@@ -79,8 +79,8 @@ FINE_TUNE = True
 
 # Saving options
 SAVE_MODEL = False
-SAVE_PREDICTIONS = True
-SAVE_METRICS = False
+SAVE_PREDICTIONS = False
+SAVE_METRICS = True
 
 TRAIN_IMG_DIR = "Aquatic Data Splits/train/images/"
 TRAIN_MASK_DIR = "Aquatic Data Splits/train/masks/"
@@ -89,7 +89,7 @@ VAL_MASK_DIR = "Aquatic Data Splits/val/masks/"
 TEST_IMG_DIR = 'Aquatic Data Splits/test/images'
 TEST_MASK_DIR = 'Aquatic Data Splits/test/masks'
 SAVED_IMG_DIR = "Results/Saved Class Predictions/"
-SAVED_STATE_DIR = 'Learned States/'
+SAVED_STATE_DIR = './Learned States/'
 SAVED_METRIC_DIR = 'Results/Metrics/'
 LOAD_DIR = f'{SAVED_STATE_DIR}best_trained_UNET_dict.pt'
 
@@ -179,7 +179,7 @@ def main():
 
     # Adjust loss function based on class frequencies...
     weights = pixel_counts(train_loader, MASK_DICT).cuda()
-    weights = torch.max(weights).item() * torch.reciprocal(weights + 1e-3)
+    weights = torch.sqrt(torch.max(weights).item() * torch.reciprocal(weights + 1e-3))
 
     loss_fn = nn.CrossEntropyLoss(weight=weights)
     optimizer = optim.Adam(UNET_model.parameters(), lr=LEARNING_RATE)

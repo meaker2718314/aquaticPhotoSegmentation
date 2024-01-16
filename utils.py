@@ -91,7 +91,7 @@ def get_accuracy(loader, model, device="cuda"):
 
     model.train()
 
-    return round(num_correct / num_pixels, 4)
+    return num_correct / num_pixels
 
 
 def get_confusion_matrix(loader, model, mask_dict, device="cuda"):
@@ -199,16 +199,29 @@ def save_evaluation_metrics(loader, model, folder, mask_dict, device="cuda"):
     plt.xlabel('Predicted Class', labelpad=100)
     plt.ylabel('True Class', labelpad=100)
 
-    font = {'family': 'normal',
+    font = {'family': 'calibri',
             'weight': 'bold',
-            'size': 22}
-    plt.rc('font', **font)
+            'size': 13}
 
-    plt.title('Validation Confusion Matrix')
+    plt.title('Validation Set Confusion Matrix', fontdict=font)
 
     heatmap.get_figure().savefig(f'{folder}Confusion Matrix', dpi=120)
-    print(net_accuracy)
 
+    plt.figure(figsize=(8, 8))
+    sizes = [round(100*net_accuracy), round(100 - 100*net_accuracy)]
+    labels = 'Correct Classification (%)', 'Wrong Classification (%)'
+
+    explode = (0, 0.06)
+    fig1, ax1 = plt.subplots()
+    colors = ['skyblue', 'orchid']
+    ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+            shadow=True, startangle=90, colors=colors)
+    # Equal aspect ratio ensures that pie is drawn as a circle
+    ax1.axis('equal')
+    plt.title('Validation Set Pixel-wise Accuracy ', fontdict=font)
+    plt.tight_layout()
+
+    plt.savefig(f'{folder}Net Accuracy', dpi=120)
 
 def rgb_to_label_encoder(rgb_arr, color_dict):
     shape = rgb_arr.shape[:2]
