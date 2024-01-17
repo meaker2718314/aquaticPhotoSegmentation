@@ -1,4 +1,4 @@
-d## Project Summary
+## Project Summary
 The goal of this project is to perform multi-class semantic segmentation on various underwater images. 
 The model is built using the PyTorch framework and relies a UNET architecture, an especially common choice
 for research in biomedical segmentation tasks. 
