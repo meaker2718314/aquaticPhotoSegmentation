@@ -26,8 +26,7 @@ The final accuracy of the UNET Model is **81%**, which describes the proportion 
 
 ## Predictions
 
-5 Batches of test predictions can be accessed in **Results/Saved Class Predictions**, alongside the original RGB image and the manually annotated image. Below is an exemplar prediction computed by the model adjacent to the original RGB image.
-
+5 Batches of test predictions can be accessed in **Results/Saved Class Predictions**, alongside the original RGB image and the manually annotated image.
 The colors corresponding to each class are as follows:
 
 |     **Color**       |        Class Label           |
@@ -39,6 +38,10 @@ The colors corresponding to each class are as follows:
 | Red (255,0,0)       | - Artificial Instrumentation |
 | Magenta (255,0,255) | - Reefs/Invertebrates        |
 | White (255,255,255) | - Sand/Rocks                 | 
+
+
+
+Below is an exemplar prediction computed by the model adjacent to the original RGB image.
 
 
 ![image](https://github.com/meaker2718314/aquaticPhotoSegmentation/assets/70233435/9314dc90-9ce7-4980-b52d-9d6b97947058)
