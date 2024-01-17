@@ -12,4 +12,9 @@ The structure for this particular model uses an EfficientNet-B6 encoder with pre
 
 ## Final Metrics and Analysis
 
-The final accuracy of the UNET Model is **81%**, meaning the proportion of correctly classified pixels. Analysis of the Confusion Matrix suggests that the most predominant misclassifications were 
+The final accuracy of the UNET Model is **81%**, meaning the proportion of correctly classified pixels. Analysis of the Confusion Matrix suggests that the most predominant misclassifications were as follows:
+
+**TRUE CLASS**  **PREDICTED CLASS**   **PROPORTION**
+Seagrass        Reefs/Invertebrates     55%
+Sand/Rocks        Reefs/Invertebrates     17%
+Human Instrumentation        Human Diver     17%
