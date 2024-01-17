@@ -41,6 +41,7 @@ The colors corresponding to each class are as follows:
 
 
 
+
 Below is an exemplar prediction computed by the model adjacent to the original RGB image.
 
 
@@ -52,5 +53,5 @@ Below is an exemplar prediction computed by the model adjacent to the original R
 - A different loss function could be utilized which is closer tied to final accuracies, such as a **Multi-Class Dice** loss criterion or **IoU** loss criterion.
 - Especially poor performing batches during training could be revisited during training
 - A larger, more robut encoder could be chosen to increase model complexity, or alternatively, a smaller encoder to prevent overfitting and improve generalization.
-- Dataset quality could be improved with more geometric augmentations on the initial dataset, such as rotations, orthogonal projections, etc.
+- Dataset quality could be improved with more geometric augmentations on the initial dataset, such as **rotations, orthogonal projections**, etc.
 
