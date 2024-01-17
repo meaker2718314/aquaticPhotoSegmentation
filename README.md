@@ -24,6 +24,8 @@ The final accuracy of the UNET Model is **81%**, meaning the proportion of corre
 ## Predictions
 
 5 Batches of test predictions can be accessed in **Results/Saved Class Predictions**, alongside the original RGB image and the manually annotated image. Below is an exemplar prediction computed by the model next to the default image:
+
+
 ![image](https://github.com/meaker2718314/aquaticPhotoSegmentation/assets/70233435/9314dc90-9ce7-4980-b52d-9d6b97947058)
 ![image](https://github.com/meaker2718314/aquaticPhotoSegmentation/assets/70233435/45dc08f8-c596-45b2-9fa9-671ee8c23def)
 
