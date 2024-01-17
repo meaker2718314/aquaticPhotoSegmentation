@@ -12,4 +12,4 @@ The structure for this particular model uses an EfficientNet-B6 encoder with pre
 
 ## Final Metrics and Analysis
 
-The final performance of the model can be analyzed using the Confusion Matrix found in directory **/Results/Metrics**
+The final accuracy of the UNET Model is **81%**, meaning the proportion of correctly classified pixels. Analysis of the Confusion Matrix suggests that the most predominant misclassifications were 
