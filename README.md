@@ -1,4 +1,4 @@
-## Project Summary
+d## Project Summary
 The goal of this project is to perform multi-class semantic segmentation on various underwater images. 
 The model is built using the PyTorch framework and relies a UNET architecture, an especially common choice
 for research in biomedical segmentation tasks. 
@@ -30,13 +30,15 @@ The final accuracy of the UNET Model is **81%**, which describes the proportion 
 
 The colors corresponding to each class are as follows:
 
-Black (0,0,0)       - Open Water
-Blue (0,0,255)      - Human Diver
-Green (0,255,0)     - Seagrass
-Cyan (0,255,255)    - Shipwreck or Ruins
-Red (255,0,0)       - Artificial Instrumentation
-Magenta (255,0,255) - Reefs/Invertebrates
-White (255,255,255) - Sand/Rocks
+|     **Color**       |        Class Label           |
+| ------------------- | ---------------------------- |
+| Black (0,0,0)       | - Open Water                 |
+| Blue (0,0,255)      | - Human Diver                |
+| Green (0,255,0)     | - Seagrass                   |
+| Cyan (0,255,255)    | - Shipwreck or Ruins         |
+| Red (255,0,0)       | - Artificial Instrumentation |
+| Magenta (255,0,255) | - Reefs/Invertebrates        |
+| White (255,255,255) | - Sand/Rocks                 | 
 
 
 ![image](https://github.com/meaker2718314/aquaticPhotoSegmentation/assets/70233435/9314dc90-9ce7-4980-b52d-9d6b97947058)
